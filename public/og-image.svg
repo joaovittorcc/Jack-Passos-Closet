@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f6f1e6"/>
+  <!-- fio -->
+  <line x1="880" y1="70" x2="880" y2="150" stroke="#ab8654" stroke-width="3"/>
+  <!-- etiqueta gigante -->
+  <g transform="rotate(-3 880 380)">
+    <path d="M880 150 L1000 220 V560 H760 V220 Z" fill="#6e2136"/>
+    <circle cx="880" cy="200" r="10" fill="#f6f1e6" stroke="#4a1624" stroke-width="3"/>
+    <text x="880" y="300" font-family="'Barlow Semi Condensed', sans-serif" font-size="20" letter-spacing="6" fill="#ab8654" text-anchor="middle">SINCE ANÁPOLIS</text>
+    <text x="880" y="360" font-family="Georgia, serif" font-size="52" font-style="italic" font-weight="600" fill="#f6f1e6" text-anchor="middle">Jack Passos</text>
+    <text x="880" y="405" font-family="'Barlow Semi Condensed', sans-serif" font-size="28" letter-spacing="12" fill="#efe6d8" text-anchor="middle">CLOSET</text>
+    <line x1="850" y1="440" x2="910" y2="440" stroke="#ab8654" stroke-width="2"/>
+    <text x="880" y="480" font-family="Inter, sans-serif" font-size="20" fill="#efe6d8" text-anchor="middle">Moda feminina</text>
+  </g>
+  <!-- texto à esquerda -->
+  <text x="90" y="230" font-family="'Barlow Semi Condensed', sans-serif" font-size="26" letter-spacing="6" fill="#6e2136">LOJA FÍSICA · JUNDIAÍ, ANÁPOLIS</text>
+  <text x="86" y="320" font-family="Georgia, serif" font-size="72" font-weight="600" fill="#221e1b">Moda feminina</text>
+  <text x="86" y="400" font-family="Georgia, serif" font-size="72" font-style="italic" font-weight="600" fill="#6e2136">toda semana.</text>
+  <text x="90" y="470" font-family="Inter, sans-serif" font-size="26" fill="#4a453f">Catálogo direto no WhatsApp · @jackpassoscloset</text>
+  <text x="90" y="540" font-family="Inter, sans-serif" font-size="24" fill="#4a453f">★ 4,8 · 26 avaliações Google</text>
+</svg>

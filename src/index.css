@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream text-ink font-body antialiased;
+}
+
+/* Swing tag (etiqueta de roupa): bandeirola com ponta triangular pra cima,
+   onde passa o fio. Reproduzida via clip-path, sem imagem. */
+.swing-tag {
+  clip-path: polygon(50% 0%, 100% 18%, 100% 100%, 0% 100%, 0% 18%);
+}
+
+/* Textura sutil de tecido para os swatches sem foto */
+.fabric-texture {
+  background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.045) 0px,
+      rgba(255, 255, 255, 0.045) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(0, 0, 0, 0.05) 0px,
+      rgba(0, 0, 0, 0.05) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker,
+  .animate-sway {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

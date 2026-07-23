@@ -1,0 +1,14 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vercel
+npm-debug.log*
+
+# Artefatos de auditoria/preview (não versionar)
+.playwright-mcp
+desktop-full.png
+cards.png
+card1.png
+mobile-375.png

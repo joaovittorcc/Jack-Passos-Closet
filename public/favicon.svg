@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#f6f1e6"/>
+  <!-- etiqueta (swing tag) ponta pra cima -->
+  <path d="M32 10 L52 22 V54 H12 V22 Z" fill="#6e2136"/>
+  <circle cx="32" cy="21" r="3.4" fill="#f6f1e6"/>
+  <text x="32" y="44" font-family="Georgia, serif" font-size="20" font-style="italic" font-weight="600" fill="#f6f1e6" text-anchor="middle">JP</text>
+</svg>
