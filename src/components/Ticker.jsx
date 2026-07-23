@@ -6,7 +6,7 @@ export default function Ticker() {
   const itens = [...CATEGORIAS, ...CATEGORIAS]
 
   return (
-    <div className="border-y border-brass/25 bg-paper py-4">
+    <div className="sticky top-[4.25rem] z-30 border-y border-brass/25 bg-paper py-4">
       <div className="relative flex overflow-hidden">
         <ul className="flex shrink-0 animate-ticker items-center gap-10 pr-10">
           {itens.map((cat, i) => (

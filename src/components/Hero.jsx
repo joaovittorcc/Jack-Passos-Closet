@@ -18,28 +18,40 @@ function Estatistica({ valor, label }) {
 
 export default function Hero() {
   const conteudoRef = useRef(null)
+  const secaoRef = useRef(null)
 
-  // Fade-out do conteúdo principal conforme a página rola. Usamos rAF pra não
-  // travar o scroll e respeitamos prefers-reduced-motion (sem animação).
+  // Fade-out do conteúdo principal conforme a página rola. A distância do fade
+  // acompanha a altura do próprio hero, então o texto só termina de sumir quando
+  // o hero está saindo de cena e o ticker chega ao topo — sem vazio branco no
+  // meio do scroll. Usamos rAF pra não travar o scroll e respeitamos
+  // prefers-reduced-motion.
   useEffect(() => {
     const el = conteudoRef.current
-    if (!el) return
+    const secao = secaoRef.current
+    if (!el || !secao) return
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    let distancia = secao.offsetHeight
+    const medir = () => {
+      distancia = secao.offsetHeight
+    }
 
     let raf = 0
     const aoRolar = () => {
       cancelAnimationFrame(raf)
       raf = requestAnimationFrame(() => {
-        const progresso = Math.min(window.scrollY / 420, 1)
+        const progresso = Math.min(window.scrollY / distancia, 1)
         el.style.opacity = String(1 - progresso)
         el.style.transform = `translateY(${progresso * 48}px)`
       })
     }
 
     window.addEventListener('scroll', aoRolar, { passive: true })
+    window.addEventListener('resize', medir)
     aoRolar()
     return () => {
       window.removeEventListener('scroll', aoRolar)
+      window.removeEventListener('resize', medir)
       cancelAnimationFrame(raf)
     }
   }, [])
@@ -47,6 +59,7 @@ export default function Hero() {
   return (
     <section
       id="topo"
+      ref={secaoRef}
       className="relative flex min-h-[calc(100vh-4rem)] items-center overflow-hidden"
     >
       <div
