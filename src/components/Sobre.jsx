@@ -25,7 +25,7 @@ const DIFERENCIAIS = [
 
 export default function Sobre() {
   return (
-    <section id="sobre" className="scroll-mt-20 py-16 sm:py-24">
+    <section id="sobre" className="scroll-mt-36 py-16 sm:py-24">
       <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16">
         <div>
           <p className="font-label text-xs uppercase tracking-[0.3em] text-wine">

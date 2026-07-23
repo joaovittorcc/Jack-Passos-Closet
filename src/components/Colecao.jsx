@@ -3,7 +3,7 @@ import { PRODUTOS } from '../data/produtos'
 
 export default function Colecao() {
   return (
-    <section id="colecao" className="scroll-mt-20 py-16 sm:py-24">
+    <section id="colecao" className="scroll-mt-36 py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="max-w-xl">
           <p className="font-label text-xs uppercase tracking-[0.3em] text-wine">
@@ -16,6 +16,10 @@ export default function Colecao() {
           <p className="mt-3 text-ink-soft">
             Uma amostra do que tem na loja agora. Gostou de alguma? Chama no
             WhatsApp que a gente confirma tamanho e disponibilidade.
+          </p>
+          <p className="mt-3 text-sm italic text-ink-soft/80">
+            Peças, cores e preços abaixo são exemplos desta demonstração e ainda
+            podem ser ajustados.
           </p>
         </div>
 

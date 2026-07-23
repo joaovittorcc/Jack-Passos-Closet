@@ -22,7 +22,7 @@ export default function Hero() {
 
   // Fade-out do conteúdo principal conforme a página rola. A distância do fade
   // acompanha a altura do próprio hero, então o texto só termina de sumir quando
-  // o hero está saindo de cena e o ticker chega ao topo — sem vazio branco no
+  // o hero está saindo de cena e o ticker chega ao topo, sem vazio branco no
   // meio do scroll. Usamos rAF pra não travar o scroll e respeitamos
   // prefers-reduced-motion.
   useEffect(() => {
@@ -31,9 +31,12 @@ export default function Hero() {
     if (!el || !secao) return
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
-    let distancia = secao.offsetHeight
+    // Guardamos contra 0 (evita divisão por zero) e remedimos quando as fontes
+    // terminam de carregar / no load, pois elas alteram a altura do hero e, com
+    // ela, a distância correta do fade.
+    let distancia = Math.max(secao.offsetHeight, 1)
     const medir = () => {
-      distancia = secao.offsetHeight
+      distancia = Math.max(secao.offsetHeight, 1)
     }
 
     let raf = 0
@@ -48,10 +51,15 @@ export default function Hero() {
 
     window.addEventListener('scroll', aoRolar, { passive: true })
     window.addEventListener('resize', medir)
+    window.addEventListener('load', medir)
+    if (document.fonts?.ready) {
+      document.fonts.ready.then(medir)
+    }
     aoRolar()
     return () => {
       window.removeEventListener('scroll', aoRolar)
       window.removeEventListener('resize', medir)
+      window.removeEventListener('load', medir)
       cancelAnimationFrame(raf)
     }
   }, [])

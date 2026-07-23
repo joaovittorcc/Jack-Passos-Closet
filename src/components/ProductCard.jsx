@@ -37,6 +37,13 @@ export default function ProductCard({ produto }) {
           />
         )}
 
+        {/* Aviso de placeholder: só aparece enquanto não há foto real */}
+        {!imagem && (
+          <span className="absolute left-2 top-2 rounded-full bg-ink/70 px-2 py-0.5 font-label text-[0.6rem] uppercase tracking-wider text-cream backdrop-blur-sm">
+            Foto ilustrativa
+          </span>
+        )}
+
         {/* Mini etiqueta de preço pendurada no canto */}
         <SwingTag
           className="absolute right-3 top-0 w-16 bg-paper pb-3 pt-4 text-center shadow-md sm:w-[4.5rem]"
